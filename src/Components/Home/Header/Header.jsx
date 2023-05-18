@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className=''> 
             {/*  Website logo, Website name, Home, All Toys, My Toys, Add A Toy, Blogs, and User profile picture. */}
-            <div className="navbar bg-lime-200">
+            <div className="navbar bg-lime-200 rounded-xl">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Get started</a>
+    <Link to='logIn'><button className='bg-red-600 text-white font-bold px-2 rounded'>LogIn</button></Link>
   </div>
 </div>
         </div>
