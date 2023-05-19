@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { contextProvider } from '../../../AuthProvider/AuthProvider';
 
 const AllToyes = () => {
+    const {data}=useContext(contextProvider)
     return (
         <div>
-            <h1>All toys page</h1>
+            <h1>All toys page{data.length}</h1>
+            {/* {
+                data.map(info=>)
+            } */}
         </div>
     );
 };

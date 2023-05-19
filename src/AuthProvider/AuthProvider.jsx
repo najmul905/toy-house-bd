@@ -6,6 +6,13 @@ const AuthProvider = ({children}) => {
    const auth=getAuth(app)
 
 
+   const [data,setData]=useState([])
+   useEffect(()=>{
+    fetch('http://localhost:5000/toys')
+    .then(res=>res.json())
+    .then(data=>setData(data))
+   },[])
+
 const [user,setUser]=useState(null)
 const [loader,setLoader]=useState(true)
 useEffect(()=>{
@@ -31,7 +38,7 @@ const logOut=()=>{
 const createUser=(email,password)=>{
    return createUserWithEmailAndPassword(auth,email,password)
 }
-const information={createUser,logOut,user,logIn}
+const information={createUser,logOut,user,logIn,data}
     return (
         <div>
             <contextProvider.Provider value={information}>

@@ -3,13 +3,15 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 const ReactTab = () => {
     return (
-        <div>
+        <div className='mx-auto'>
              <Tabs>
-    <TabList>
+   <div >
+   <TabList>
       <Tab>sports car</Tab>
       <Tab>truck</Tab>
       <Tab>police car</Tab>
     </TabList>
+   </div>
 
     <TabPanel>
       <h2>Sport car: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil ipsam et laudantium officia tenetur ullam eveniet quos vitae quod fuga distinctio vero adipisci cumque, voluptates molestias consectetur, nisi assumenda.</p></h2>
