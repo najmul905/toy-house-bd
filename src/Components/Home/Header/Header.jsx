@@ -1,7 +1,17 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { contextProvider } from '../../../AuthProvider/AuthProvider';
 
 const Header = () => {
+const {logOut,user}=useContext(contextProvider)
+
+const handelLogOut=()=>{
+  logOut()
+  .then(result=>{console.log(result)})
+  .catch(error=>{console.log(error)})
+}
+
     return (
         <div className=''> 
             {/*  Website logo, Website name, Home, All Toys, My Toys, Add A Toy, Blogs, and User profile picture. */}
@@ -31,7 +41,9 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to='logIn'><button className='bg-red-600 text-white font-bold px-2 rounded'>LogIn</button></Link>
+    {user?<Link to='logIn'><button onClick={handelLogOut} className='bg-red-600 text-white font-bold px-2 rounded'>LogOut</button></Link>:
+   <Link to='logIn'><button className='bg-red-600 text-white font-bold px-2 rounded'>LogIn</button></Link>}
+
   </div>
 </div>
         </div>

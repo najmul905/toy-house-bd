@@ -14,6 +14,7 @@ import AddToy from './Components/Home/AddToy/AddToy.jsx';
 import Blog from './Components/Home/Blog/Blog.jsx';
 import LogIn from './Components/LogIn/LogIn.jsx';
 import SingUp from './Components/SingUp/SingUp.jsx';
+import AuthProvider from './AuthProvider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider>
+    <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
