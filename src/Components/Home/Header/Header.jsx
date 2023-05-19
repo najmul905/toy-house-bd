@@ -8,7 +8,7 @@ const {logOut,user}=useContext(contextProvider)
 
 const handelLogOut=()=>{
   logOut()
-  .then(result=>{console.log(result)})
+  .then(result=>{console.log(result.user)})
   .catch(error=>{console.log(error)})
 }
 
@@ -29,7 +29,7 @@ const handelLogOut=()=>{
         <li><Link to='blog'>Blog</Link ></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className="btn btn-ghost normal-case text-xl">Toy shope BD</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

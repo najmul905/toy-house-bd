@@ -12,13 +12,13 @@ const ReactTab = () => {
     </TabList>
 
     <TabPanel>
-      <h2>Sport car</h2>
+      <h2>Sport car: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil ipsam et laudantium officia tenetur ullam eveniet quos vitae quod fuga distinctio vero adipisci cumque, voluptates molestias consectetur, nisi assumenda.</p></h2>
     </TabPanel>
     <TabPanel>
-      <h2>Truck</h2>
+      <h2>Truck :<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil ipsam et laudantium officia tenetur ullam eveniet quos vitae quod fuga distinctio vero adipisci cumque, voluptates molestias consectetur, nisi assumenda.</p></h2>
     </TabPanel>
     <TabPanel>
-      <h2>Police car</h2>
+      <h2>Police car :<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil ipsam et laudantium officia tenetur ullam eveniet quos vitae quod fuga distinctio vero adipisci cumque, voluptates molestias consectetur, nisi assumenda.</p></h2>
     </TabPanel>
   </Tabs>
         </div>

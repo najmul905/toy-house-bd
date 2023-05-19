@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
+
+
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +18,8 @@ import Blog from './Components/Home/Blog/Blog.jsx';
 import LogIn from './Components/LogIn/LogIn.jsx';
 import SingUp from './Components/SingUp/SingUp.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
+// import Root from 'postcss/lib/root.js';
+
 
 const router = createBrowserRouter([
   {
@@ -51,6 +56,9 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    
+  }
 ]);
 
 

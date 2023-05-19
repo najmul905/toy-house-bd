@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    < div className=' bg-orange-200'>
+    < div className=' bg-orange-200 '>
       <HeaderLayOut></HeaderLayOut>
      
       <Footer></Footer>

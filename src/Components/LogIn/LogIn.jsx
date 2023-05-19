@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { contextProvider } from '../../AuthProvider/AuthProvider';
 const LogIn = () => {
+const {logIn}=useContext(contextProvider)
+
   const auth = getAuth();
 const provider=new GoogleAuthProvider()
 const handelGoogle=()=>{
   signInWithPopup(auth,provider)
   .then(result=>{console.log(result.user)})
   .catch(error=>{console.log(error)})
+}
+
+const handelLogIn=(event)=>{
+event.preventDefault()
+const form=event.target
+const email=form.email.value;
+const password=form.password.value;
+console.log(email,password)
+logIn(email,password)
+.then(result=>{
+  console.log(result.user)
+})
+.catch(error=>{console.log(error)})
 }
 
     return (
@@ -17,7 +33,7 @@ const handelGoogle=()=>{
   <div className="hero-content ">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     <h1 className="text-3xl mt-3 font-bold text-center">LogIn Now</h1>
-      <form className="card-body">
+      <form onSubmit={handelLogIn} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
