@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { contextProvider } from '../../../AuthProvider/AuthProvider';
 
 const AddToy = () => {
+const {user,loader}=useContext(contextProvider)
+const {email,displayName}=user
+if(loader){
+    return <progress className="progress w-full"></progress>
+}
+// setLoader(false)
 const handelPost=(event)=>{
     event.preventDefault()
     const form=event.target
-    const name=form.name.value;
+    const displayName=form.name.value;
     const image=form.image.value;
     const email=form.email.value;
     const seller=form.seller.value;
@@ -12,7 +19,7 @@ const handelPost=(event)=>{
     const rating=form.rating.value;
     const quantity=form.quantity.value;
     const details=form.details.value;
-    const info={name,email,image,seller,category,rating,quantity,details}
+    const info={displayName,email,image,seller,category,rating,quantity,details}
     console.log(info)
     fetch('http://localhost:5000/toys',{
         method:"POST",
@@ -32,12 +39,12 @@ const handelPost=(event)=>{
 <div>
     
 <input className='bg-slate-200 rounded mb-2 mr-2 p-3' placeholder='Image' type="text" name="image" id="" />
-<input className='bg-slate-200 rounded mb-2 p-3' placeholder='Name' type="text" name="name" id="" />
+<input className='bg-slate-200 rounded mb-2 p-3' placeholder='Name' type="text" name="name" defaultValue={displayName} disabled id="" />
 </div>
 <div>
 <input className='bg-slate-200 rounded mb-2 mr-2 p-3'  type="text" name="seller" placeholder='Seller  Name' id="" />
 
-<input className='bg-slate-200 rounded mb-2 p-3' type="email" name="email" placeholder='Email' id="" />
+<input className='bg-slate-200 rounded mb-2 p-3' type="email" name="email" placeholder='Email' id="" disabled defaultValue={email} />
 </div>
 <div>
 <input className='bg-slate-200 rounded mb-2 mr-2 p-3'  type="text" name="category" placeholder='Category' id="" />

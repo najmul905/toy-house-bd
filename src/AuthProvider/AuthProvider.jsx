@@ -38,7 +38,7 @@ const logOut=()=>{
 const createUser=(email,password)=>{
    return createUserWithEmailAndPassword(auth,email,password)
 }
-const information={createUser,logOut,user,logIn,data}
+const information={createUser,logOut,user,logIn,data,loader}
     return (
         <div>
             <contextProvider.Provider value={information}>

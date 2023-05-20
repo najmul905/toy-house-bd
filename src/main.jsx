@@ -18,6 +18,7 @@ import Blog from './Components/Home/Blog/Blog.jsx';
 import LogIn from './Components/LogIn/LogIn.jsx';
 import SingUp from './Components/SingUp/SingUp.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import PrivetRout from './Components/PivetRout/PrivetRout.jsx';
 // import Root from 'postcss/lib/root.js';
 
 
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path:"addToy",
-        element:<AddToy></AddToy>
+        element:<PrivetRout><AddToy></AddToy></PrivetRout>
       },
       {
         path:"blog",
