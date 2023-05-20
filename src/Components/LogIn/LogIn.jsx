@@ -1,15 +1,22 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate,  } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { contextProvider } from '../../AuthProvider/AuthProvider';
 const LogIn = () => {
 const {logIn}=useContext(contextProvider)
+const navigate=useNavigate()
+// location
+const location=useLocation()
+console.log(location)
+const from=location.state?.from?.pathname || '/';
 
   const auth = getAuth();
 const provider=new GoogleAuthProvider()
 const handelGoogle=()=>{
   signInWithPopup(auth,provider)
-  .then(result=>{console.log(result.user)})
+  .then(result=>{console.log(result.user)
+  navigate(from)
+  })
   .catch(error=>{console.log(error)})
 }
 
@@ -22,6 +29,8 @@ console.log(email,password)
 logIn(email,password)
 .then(result=>{
   console.log(result.user)
+navigate(from)
+
 })
 .catch(error=>{console.log(error)})
 }
