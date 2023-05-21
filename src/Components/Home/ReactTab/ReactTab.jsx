@@ -1,31 +1,121 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { contextProvider } from '../../../AuthProvider/AuthProvider';
+import { useState } from 'react';
 const ReactTab = () => {
 
-  const {data}=useContext(contextProvider)
+  const {data,loader}=useContext(contextProvider)
+  
+
+  const [categoryData,setCategoryData]=useState([])
+  console.log(categoryData)
+  useEffect(()=>{
+    fetch('https://toy-house-server-xi.vercel.app/category')
+    .then(res=>res.json())
+    .then(data=>setCategoryData(data))
+  },[])
   const {category}=data
+  console.log(data)
+
+
+  const[sctg,setSctg]=useState([])
+const handelCategory=(category)=>{
   console.log(category)
+  const singleCategory=data.filter(ctg=>ctg.category==category)
+  setSctg(singleCategory)
+}
+console.log(sctg)
     return (
-        <div className='mx-auto'>
+        <div className='mt-5'>
              <Tabs>
-   <div >
+   <div className='text-center'>
    <TabList>
-      <Tab>sports car</Tab>
-      <Tab>truck</Tab>
-      <Tab>police car</Tab>
+      {/* <Tab>sports car</Tab>
+      <Tab>truck</Tab> */}
+      {categoryData.map(data=><Tab
+      key={data._id}
+      >
+        
+        <button onClick={()=>handelCategory(data.category)}>{data.category}</button>
+      </Tab>)}
     </TabList>
    </div>
 
+  <div>
+  <TabPanel>
+
+      <div className='grid grid-cols-4 gap-4 '>
+      {
+        sctg.map(data=><div
+        key={data._id}
+        >
+<div className=''>
+<div className="card  bg-base-100 shadow-xl">
+  <figure className="px-10 pt-10">
+    <img src={data.image} alt="Shoes" className="rounded-xl" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">Shoes!</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <div className="card-actions">
+      <button className="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+</div>
+        </div>)
+      }
+      </div>
+    </TabPanel>
+  </div>
     <TabPanel>
-      <h2>Sport car: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil ipsam et laudantium officia tenetur ullam eveniet quos vitae quod fuga distinctio vero adipisci cumque, voluptates molestias consectetur, nisi assumenda.</p></h2>
+    <div className='grid grid-cols-4 gap-4 '>
+      {
+        sctg.map(data=><div
+        key={data._id}
+        >
+<div className=''>
+<div className="card  bg-base-100 shadow-xl">
+  <figure className="px-10 pt-10">
+    <img src={data.image} alt="Shoes" className="rounded-xl" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">Shoes!</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <div className="card-actions">
+      <button className="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+</div>
+        </div>)
+      }
+      </div>
     </TabPanel>
     <TabPanel>
-      <h2>Truck :<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil ipsam et laudantium officia tenetur ullam eveniet quos vitae quod fuga distinctio vero adipisci cumque, voluptates molestias consectetur, nisi assumenda.</p></h2>
-    </TabPanel>
-    <TabPanel>
-      <h2>Police car :<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil ipsam et laudantium officia tenetur ullam eveniet quos vitae quod fuga distinctio vero adipisci cumque, voluptates molestias consectetur, nisi assumenda.</p></h2>
+    <div className='grid grid-cols-4 gap-4 '>
+      {
+        sctg.map(data=><div
+        key={data._id}
+        >
+<div className=''>
+<div className="card  bg-base-100 shadow-xl">
+  <figure className="px-10 pt-10">
+    <img src={data.image} alt="Shoes" className="rounded-xl" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">Shoes!</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <div className="card-actions">
+      <button className="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+</div>
+        </div>)
+      }
+      </div>
     </TabPanel>
   </Tabs>
         </div>

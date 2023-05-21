@@ -8,7 +8,7 @@ const AuthProvider = ({children}) => {
 
    const [data,setData]=useState([])
    useEffect(()=>{
-    fetch('http://localhost:5000/toys')
+    fetch('https://toy-house-server-xi.vercel.app/toys')
     .then(res=>res.json())
     .then(data=>setData(data))
    },[])
