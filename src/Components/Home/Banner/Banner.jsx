@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../../../../public/banner3.jpg'
 import './banner.css'
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
 <div className=' relative'>
@@ -13,7 +14,7 @@ const Banner = () => {
 </div>
 <div>
 <h1 className='text-4xl font-bold text-white absolute bottom-32 left-14'>Welcome to <span className='italic'>Toy House BD</span></h1>
-<button className='border border-white rounded hover:bg-yellow-900 text-white px-3 py-1 font-bold absolute left-14 bottom-24'>Shop Now</button>
+<Link to='/sd'><button className='border border-white rounded hover:bg-yellow-900 text-white px-3 py-1 font-bold absolute left-14 bottom-24'>Shop Now</button></Link>
 </div>
 </div>
 <div>

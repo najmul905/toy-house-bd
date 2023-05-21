@@ -2,9 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { contextProvider } from '../../../AuthProvider/AuthProvider';
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
 const {logOut,user}=useContext(contextProvider)
+console.log(user)
 
 const handelLogOut=()=>{
   logOut()
@@ -41,6 +43,11 @@ const handelLogOut=()=>{
     </ul>
   </div>
   <div className="navbar-end">
+
+    <div>
+  {user?<img className={`h-10 rounded-full  hover:${user.displayName}`}  src={user.photoURL} alt="" />:
+    <div className=''><FaUserCircle></FaUserCircle></div>}
+    </div>
   
     {user?<Link to='logIn'><button onClick={handelLogOut} className='bg-red-600 text-white font-bold px-2 rounded'>LogOut</button></Link>:
    <Link to='logIn'><button className='bg-red-600 text-white font-bold px-2 rounded'>LogIn</button></Link>}

@@ -37,7 +37,7 @@ navigate(from)
 
     return (
         <div>
-            <h1>LogIn</h1>
+           
             <div className="">
   <div className="hero-content ">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -63,7 +63,7 @@ navigate(from)
           <button className="btn btn-primary">LogIn</button>
          
           <br />
-          <button onClick={handelGoogle}>SingIn with Google</button>
+          <button className='bg-green-600 text-white px-2 rounded-xl' onClick={handelGoogle}>SingIn with Google</button>
           <div className='text-center'> <Link to="/singUp"><button className="btn btn-link">Create a new account</button></Link></div>
          
         </div>
