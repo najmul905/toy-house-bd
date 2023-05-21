@@ -21,6 +21,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import PrivetRout from './Components/PivetRout/PrivetRout.jsx';
 import Update from './Components/Home/Update/Update.jsx';
 import Details from './Components/Details/Details.jsx';
+import Error from './Components/ErrorPage/Error.jsx';
 
 
 
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path:"details/:id",
         element:<PrivetRout><Details></Details></PrivetRout>
+      },
+      {
+        path:"*",
+        element:<Error></Error>
       }
       
     ]
