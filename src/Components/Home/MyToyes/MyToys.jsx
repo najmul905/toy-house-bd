@@ -1,8 +1,14 @@
 import React, { useContext } from 'react';
 import { contextProvider } from '../../../AuthProvider/AuthProvider';
 import MytoyCard from '../MyToyCard/MytoyCard';
+import { useState } from 'react';
 
 const MyToys = () => {
+
+   
+
+
+
 const {data,user,loader}=useContext(contextProvider)
 if(loader){
     return <progress className="progress w-56"></progress>
@@ -10,8 +16,29 @@ if(loader){
 const {email}=user
 console.log(email)
 
-const myToy=data.filter(info=>info.email===email)
+const [toys,setToys]=useState(data)
+
+const myToy=toys.filter(info=>info.email===email)
 console.log(myToy.length)
+
+
+
+const handelDelete=(_id)=>{
+    console.log('delete',_id)
+    fetch(`http://localhost:5000/toys/${_id}`,{
+      method:'DELETE'
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+    
+      if(data.deletedCount>0){
+        alert('Deleted SuccessFully')
+      const remaining=toys.filter(toy => toy._id !== _id)
+setToys(remaining)
+    }
+    })
+  }
     return (
         <div className='mx-14'>
            <h1>My Toys page{myToy.length}</h1> 
@@ -20,6 +47,7 @@ console.log(myToy.length)
             myToy.map(data=><MytoyCard
             key={data._id}
             data={data}
+            handelDelete={handelDelete}
             ></MytoyCard>)
            }
            </div>

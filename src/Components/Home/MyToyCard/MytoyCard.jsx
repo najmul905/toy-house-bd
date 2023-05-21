@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const MytoyCard = ({data}) => {
-    const {name,image,_id}=data
-const [toys,setToys]=use
+const MytoyCard = ({data,handelDelete}) => {
+   
+
+
+const{name,quantity,_id,image}=data
+console.log(name,quantity)
     // delete operation
-    const handelDelete=(_id)=>{
-      console.log('delete',_id)
-      fetch(`http://localhost:5000/toys/${_id}`,{
-        method:'DELETE'
-      })
-      .then(res=>res.json())
-      .then(data=>{console.log(data)})
-    }
+    // const handelDelete=(_id)=>{
+    //   console.log('delete',_id)
+    //   fetch(`http://localhost:5000/toys/${_id}`,{
+    //     method:'DELETE'
+    //   })
+    //   .then(res=>res.json())
+    //   .then(data=>{
+    //     console.log(data)
+      
+    //     if(data.deletedCount>0){
+    //       alert('Deleted SuccessFully')
+        
+    //   }
+    //   })
+    // }
     
     return (
         <div className='mb-4'>
