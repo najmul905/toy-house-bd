@@ -25,7 +25,7 @@ const myToy=toys.filter(info=>info.email===email)
 
 const handelDelete=(_id)=>{
     // console.log('delete',_id)
-    fetch(`http://localhost:5000/toys/${_id}`,{
+    fetch(`https://toy-house-server-xi.vercel.app/toys/${_id}`,{
       method:'DELETE'
     })
     .then(res=>res.json())

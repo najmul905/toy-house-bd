@@ -6,7 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
 const {logOut,user}=useContext(contextProvider)
-console.log(user)
+// console.log(user)
 
 const handelLogOut=()=>{
   logOut()

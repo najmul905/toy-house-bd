@@ -21,7 +21,7 @@ const handelUpdate=(event)=>{
     const details=form.details.value;
     const updatedData={quantity,details,price}
     console.log(updatedData)
-fetch(`http://localhost:5000/toys/${data._id}`,{
+fetch(`https://toy-house-server-xi.vercel.app/toys/${data._id}`,{
     method:'PUT',
     headers:{
         'content-type':'application/json'
