@@ -48,7 +48,7 @@ console.log(sctg)
   <div>
   <TabPanel>
 
-      <div className='grid grid-cols-4 gap-4 '>
+      <div className='grid md:grid-cols-4 gap-4 md:gap-4 mb-10'>
       {
         sctg.map(data=><div
         key={data._id}
@@ -73,7 +73,7 @@ console.log(sctg)
     </TabPanel>
   </div>
     <TabPanel>
-    <div className='grid grid-cols-4 gap-4 '>
+    <div className='grid gap-4 md:grid-cols-4 md:gap-4  mb-10'>
       {
         sctg.map(data=><div
         key={data._id}
@@ -97,7 +97,7 @@ console.log(sctg)
       </div>
     </TabPanel>
     <TabPanel>
-    <div className='grid grid-cols-4 gap-4 '>
+    <div className='grid md:grid-cols-4 gap-4 md:gap-4  mb-10'>
       {
         sctg.map(data=><div
         key={data._id}
