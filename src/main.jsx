@@ -20,6 +20,7 @@ import SingUp from './Components/SingUp/SingUp.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import PrivetRout from './Components/PivetRout/PrivetRout.jsx';
 import Update from './Components/Home/Update/Update.jsx';
+import Details from './Components/Details/Details.jsx';
 
 
 
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path:"myToy",
-        element:<MyToys></MyToys>
+        element:<PrivetRout><MyToys></MyToys></PrivetRout>
       },
       {
         path:"addToy",
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
         path:"update/:id",
         element:<Update></Update>,
         loader:({params})=>fetch(`https://toy-house-server-xi.vercel.app/toys/${params.id}`)
+      },
+      {
+        path:"details/:id",
+        element:<PrivetRout><Details></Details></PrivetRout>
       }
       
     ]
