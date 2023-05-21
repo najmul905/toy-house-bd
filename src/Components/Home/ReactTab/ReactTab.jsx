@@ -27,7 +27,10 @@ const handelCategory=(category)=>{
 }
 console.log(sctg)
     return (
-        <div className='mt-5'>
+        <div className='mt-12'>
+          <div className='text-center text-3xl font-bold my-7 text-white'>
+            <h1>See the Toy Cars Category</h1>
+          </div>
              <Tabs>
    <div className='text-center'>
    <TabList>
