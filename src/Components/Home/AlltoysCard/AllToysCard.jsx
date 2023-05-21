@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AllToysCard = ({info}) => {
 
     const{displayName,email,image,name,_id}=info
-    console.log(displayName,image)
+    // console.log(displayName,image)
     return (
         <div>
             <div className="card w-auto glass">

@@ -9,23 +9,23 @@ const ReactTab = () => {
   
 
   const [categoryData,setCategoryData]=useState([])
-  console.log(categoryData)
+  // console.log(categoryData)
   useEffect(()=>{
     fetch('https://toy-house-server-xi.vercel.app/category')
     .then(res=>res.json())
     .then(data=>setCategoryData(data))
   },[])
   const {category}=data
-  console.log(data)
+  // console.log(data)
 
 
   const[sctg,setSctg]=useState([])
 const handelCategory=(category)=>{
-  console.log(category)
+  // console.log(category)
   const singleCategory=data.filter(ctg=>ctg.category==category)
   setSctg(singleCategory)
 }
-console.log(sctg)
+// console.log(sctg)
     return (
         <div className='mt-12'>
           <div className='text-center text-3xl font-bold my-7 text-white'>

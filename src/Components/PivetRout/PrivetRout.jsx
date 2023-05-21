@@ -6,7 +6,7 @@ const PrivetRout = ({children}) => {
     const {user,loader}=useContext(contextProvider)
     // location
     const location=useLocation()
-    console.log(location)
+    // console.log(location)
 
 if(loader){
     return <progress className="progress w-56"></progress>

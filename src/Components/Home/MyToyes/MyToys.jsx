@@ -19,12 +19,12 @@ console.log(email)
 const [toys,setToys]=useState(data)
 
 const myToy=toys.filter(info=>info.email===email)
-console.log(myToy.length)
+// console.log(myToy.length)
 
 
 
 const handelDelete=(_id)=>{
-    console.log('delete',_id)
+    // console.log('delete',_id)
     fetch(`http://localhost:5000/toys/${_id}`,{
       method:'DELETE'
     })
@@ -41,7 +41,7 @@ setToys(remaining)
   }
     return (
         <div className='mx-14'>
-           <h1>My Toys page{myToy.length}</h1> 
+           
            <div mb-4>
            {
             myToy.map(data=><MytoyCard

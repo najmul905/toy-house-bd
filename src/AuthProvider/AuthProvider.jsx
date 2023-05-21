@@ -17,7 +17,7 @@ const [user,setUser]=useState(null)
 const [loader,setLoader]=useState(true)
 useEffect(()=>{
     const unsubscribe=onAuthStateChanged(auth,createUser=>{
-        console.log('current user is here',createUser)
+        // console.log('current user is here',createUser)
         setUser(createUser)
         setLoader(false)
     })

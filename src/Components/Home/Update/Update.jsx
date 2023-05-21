@@ -36,7 +36,7 @@ fetch(`http://localhost:5000/toys/${data._id}`,{
 
     return (
         <div>
-        <h1 className='p-3'>This is update page{data.name}</h1>
+        
             <div className='mx-14 rounded'>
             <h1 className='text-3xl font-bold bg-rose-300 text-center' >Update Your Information</h1>
            <form onSubmit={handelUpdate} className='text-center bg-white'>     
@@ -45,10 +45,15 @@ fetch(`http://localhost:5000/toys/${data._id}`,{
 
 <div className=''>
     
-<input className='bg-slate-200 mt-10 rounded mb-2 mr-2 p-3'  type="number" name="quantity" placeholder='Quantity' defaultValue={data?.quantity} id="" />
-<input className='bg-slate-200 rounded mb-2 p-3' placeholder='Price' type="number" name="price" defaultValue={data?.price} id="" />
-</div>
 <div>
+    <h1>Quantity</h1>
+    <input className='bg-slate-200  rounded   p-3'  type="number" name="quantity" placeholder='Quantity' defaultValue={data?.quantity} id="" /></div>
+    <br />
+    <h1>Price</h1>
+<input className='bg-slate-200 rounded  p-3' placeholder='Price' type="number" name="price" defaultValue={data?.price} id="" />
+</div>
+<div className='mt-2'>
+    <h1>Details</h1>
 <input className='bg-slate-200 rounded mb-2 p-3 w-1/2' placeholder='Details' defaultValue={data.details} type="text" name="details" id="" />
 </div>
 <button className='bg-green-500 text-white font-bold px-3 py-2 rounded mb-10 '>Update</button>

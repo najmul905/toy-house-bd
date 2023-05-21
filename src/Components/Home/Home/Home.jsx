@@ -12,7 +12,7 @@ const Home = () => {
         <div className='mx-14'>
             
             <Banner></Banner>
-            <h1>This is Home page</h1>
+           
             <Slider></Slider>
            <ReactTab></ReactTab>
             

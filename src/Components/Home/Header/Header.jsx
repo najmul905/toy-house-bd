@@ -41,6 +41,7 @@ const handelLogOut=()=>{
     </ul>
   </div>
   <div className="navbar-end">
+  
     {user?<Link to='logIn'><button onClick={handelLogOut} className='bg-red-600 text-white font-bold px-2 rounded'>LogOut</button></Link>:
    <Link to='logIn'><button className='bg-red-600 text-white font-bold px-2 rounded'>LogIn</button></Link>}
 
