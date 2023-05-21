@@ -29,7 +29,7 @@ const handelLogOut=()=>{
         <li><Link to='blog'>Blog</Link ></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Toy shope BD</a>
+    <a className="btn btn-ghost normal-case text-xl">Toy House BD</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

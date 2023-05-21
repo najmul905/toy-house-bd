@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { contextProvider } from '../../../AuthProvider/AuthProvider';
 const ReactTab = () => {
+
+  const {data}=useContext(contextProvider)
+  const {category}=data
+  console.log(category)
     return (
         <div className='mx-auto'>
              <Tabs>

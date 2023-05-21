@@ -19,7 +19,8 @@ import LogIn from './Components/LogIn/LogIn.jsx';
 import SingUp from './Components/SingUp/SingUp.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import PrivetRout from './Components/PivetRout/PrivetRout.jsx';
-// import Root from 'postcss/lib/root.js';
+import Update from './Components/Home/Update/Update.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -54,7 +55,13 @@ const router = createBrowserRouter([
       {
         path:"singUp",
         element:<SingUp></SingUp>
+      },
+      {
+        path:"update/:id",
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
       }
+      
     ]
   },
   {

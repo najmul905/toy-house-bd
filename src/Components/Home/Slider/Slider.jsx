@@ -3,6 +3,9 @@ import React from 'react';
 const Slider = () => {
     return (
         <div>
+          <div>
+            <h1 className='text-4xl font-bold text-center mb-5'>Our Toy Demo</h1>
+          </div>
             <div className="carousel w-full md:w-1/2 mx-auto">
   <div id="slide1" className="carousel-item relative w-full">
     

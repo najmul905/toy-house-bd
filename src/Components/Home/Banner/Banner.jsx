@@ -1,5 +1,6 @@
 import React from 'react';
-import image from '../../../../public/banner2.jpg'
+import image from '../../../../public/banner3.jpg'
+import './banner.css'
 const Banner = () => {
     return (
 <div className=' relative'>
