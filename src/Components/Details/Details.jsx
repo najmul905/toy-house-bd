@@ -12,7 +12,6 @@ console.log(info)
 
     return (
         <div className='mx-14 my-6'>
-            <h1>This is details page{id}</h1>
             <div className="card  bg-base-100 shadow-xl">
   <figure><img src={info.image} alt="Shoes" /></figure>
   <div className="card-body">
